@@ -70,10 +70,27 @@
     <div class="wrap">
       <h2>案例：20 张门店烂表 → 一张汇总表</h2>
       <p class="lead">20 个门店的月销售表：表头位置不一、字段名带空格、混着空行和合计行、还有重复订单。清洗合并后：473 条订单，总额 163,139.00 元，对账分毫不差。</p>
-      <figure class="shot">
-        <img src="assets/case-excel.jpg" alt="处理前后的表格对比">
-        <figcaption>上：原始表格 &nbsp;·&nbsp; 下：处理后的汇总表</figcaption>
-      </figure>
+      <div class="mock">
+        <p class="mock-cap bad">处理前 · 每张表都长得不一样</p>
+        <table class="t messy">
+          <tr><td colspan="4" class="t-title">城南店6月销售（第二版）</td></tr>
+          <tr><th>订 单 号</th><th>商 品</th><th>数 量</th><th>金 额</th></tr>
+          <tr><td>CS-0601</td><td>矿泉水</td><td>20</td><td>30.00</td></tr>
+          <tr class="dup"><td>CS-0601</td><td>矿泉水</td><td>20</td><td>30.00</td></tr>
+          <tr><td colspan="4" class="blank">&nbsp;</td></tr>
+          <tr><td colspan="3">合计</td><td>……</td></tr>
+        </table>
+        <p class="mock-note">表头不在第一行 · 字段名带空格 · 混着空行和合计行 · 还有重复订单</p>
+        <p class="mock-cap good">处理后 · 一张汇总表</p>
+        <table class="t clean">
+          <tr><th>订单号</th><th>门店</th><th>区域</th><th>金额</th></tr>
+          <tr><td>CS-0601</td><td>城南店</td><td>华南</td><td>30.00</td></tr>
+          <tr><td>HB-0237</td><td>江北店</td><td>华北</td><td>1,280.50</td></tr>
+          <tr><td>HD-0412</td><td>浦东店</td><td>华东</td><td>866.00</td></tr>
+          <tr class="total"><td colspan="3">共 473 条订单 · 合计</td><td>¥163,139.00</td></tr>
+        </table>
+        <p class="mock-note">去重、统一格式、剔除合计行，对账分毫不差；另按区域拆成 5 个分表交付</p>
+      </div>
     </div>
   </section>
 

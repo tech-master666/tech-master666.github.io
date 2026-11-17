@@ -48,8 +48,20 @@ img{max-width:100%;display:block}
 .card li{padding:5px 0 5px 18px;position:relative}
 .card li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:var(--blue2)}
 .card .price{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-weight:700;color:var(--blue)}
-.shot{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;max-width:620px}
-.shot figcaption{text-align:center;color:var(--mut);font-size:14px;padding-top:10px}
+.mock{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;max-width:620px}
+.mock-cap{font-weight:700;margin:4px 0 10px}
+.mock-cap.bad{color:#b03a2e}
+.mock-cap.good{color:var(--blue);margin-top:22px}
+.mock-note{color:var(--mut);font-size:13px;margin-top:8px}
+.t{width:100%;border-collapse:collapse;font-size:14px}
+.t th,.t td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.t.messy{background:#faf7f2;color:#6b6257}
+.t.messy th{background:#e8e0d2;font-weight:400}
+.t.messy .t-title{font-weight:700;background:#efe8da}
+.t.messy .dup{background:#fbe9e7;color:#b03a2e}
+.t.messy .blank{background:#f3eee5}
+.t.clean th{background:var(--blue);color:#fff}
+.t.clean .total{font-weight:700;background:var(--alt);color:var(--blue)}
 .steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
 .steps li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;position:relative}
 .steps b{display:block;font-size:17px;margin-bottom:6px;color:var(--blue)}
