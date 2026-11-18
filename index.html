@@ -3,123 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>数据处理 · 网页制作 | 041030.top</title>
+<title>041030.top — 数据处理 · 网页制作</title>
 <meta name="description" content="Excel 数据处理代做：多表合并、清洗、拆分、公式函数；静态网页与个人主页制作。先看文件再报价，做不了全额退。">
+<link rel="preconnect" href="https://fonts.loli.net">
+<link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@600;700;900&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="logo" href="#top">041030<span>.top</span></a>
-    <nav>
-      <a href="#services">服务</a>
-      <a href="#case">案例</a>
-      <a href="#flow">流程</a>
-      <a href="#contact" class="btn btn-sm">联系我</a>
+<!-- 纸张噪点（SVG 直出 rect，Safari / 移动端更稳） -->
+<svg class="grain" aria-hidden="true">
+  <filter id="paper-grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#paper-grain)"/>
+</svg>
+
+<header class="masthead">
+  <div class="wrap mast-in">
+    <a class="brand" href="#top">041030<span>.top</span></a>
+    <p class="mast-note">数据处理 · 网页制作 — 个人工作室</p>
+    <nav class="mast-nav">
+      <a href="#case"><i class="pf">01</i>案例</a>
+      <a href="#services"><i class="pf">02</i>服务</a>
+      <a href="#flow"><i class="pf">03</i>流程</a>
+      <a href="#contact" class="mast-cta">联系</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero">
-    <div class="wrap">
-      <p class="kicker">EXCEL 数据处理 · 静态网页制作</p>
-      <h1>表格再乱，也能变整齐。<br>主页再简，也能像回事。</h1>
-      <p class="sub">计算机在读，接小而具体的活：Excel 多表合并、数据清洗拆分、公式函数代写；个人主页、作品集等静态网页制作。先看文件再报价，做不了全额退。</p>
-      <div class="hero-cta">
-        <a class="btn" href="https://www.goofish.com/item?id=1100967305771" target="_blank" rel="noopener">去闲鱼下单咨询</a>
-        <a class="btn ghost" href="#case">先看案例</a>
-      </div>
-      <ul class="badges">
-        <li>先看文件 · 再报价</li>
-        <li>不满意 · 免费改</li>
-        <li>做不了 · 全额退</li>
-      </ul>
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero wrap">
+    <p class="kicker"><span class="pf">N° 01</span> EXCEL AUTOMATION ／ 办公数据整理</p>
+    <h1>把混乱的数据，<br>排成<em>秩序</em>。</h1>
+    <p class="hero-sub">二十张各写各的门店表格，也能合成一张对得上账的汇总表。我接小而具体的活：Excel 多表合并、数据清洗拆分、公式代写，以及个人主页这类静态网页。先看文件，再报价；做不了，全额退。</p>
+    <div class="hero-data">
+      <div class="datum"><span class="pf datum-num">20 → 1</span><span class="datum-label">门店表格 · 合成一张汇总</span></div>
+      <div class="datum"><span class="pf datum-num">473</span><span class="datum-label">条订单 · 清洗去重后</span></div>
+      <div class="datum"><span class="pf datum-num">¥163,139.00</span><span class="datum-label">总额对账 · 分毫不差</span></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn" href="https://www.goofish.com/item?id=1100967305771" target="_blank" rel="noopener">去闲鱼咨询下单</a>
+      <a class="btn-line" href="#case">先看这个案例怎么做的 ↓</a>
     </div>
   </section>
 
-  <section id="services" class="sec">
+  <!-- ══════════ FEATURED CASE 01 ══════════ -->
+  <section id="case" class="case">
     <div class="wrap">
-      <h2>能接的活</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Excel 数据处理</h3>
-          <ul>
-            <li>多表合并汇总、按条件拆分</li>
-            <li>数据清洗：去重、格式统一、脏数据整理</li>
-            <li>公式函数代写、报表排版美化</li>
-            <li>PDF 转 Excel、批量重复处理</li>
+      <header class="case-head">
+        <p class="case-tag"><span class="pf">Featured Case — 01</span></p>
+        <h2>真实交付全链路解剖</h2>
+        <p class="case-lead">一个最常见的委托：连锁门店每月把销售表发上来汇总。下面是这类活从「一堆烂表」到「一张净表」的完整过程。</p>
+      </header>
+
+      <div class="case-grid">
+        <!-- 左栏：痛点 -->
+        <div class="case-pain">
+          <h3><span class="pf">i.</span> 收到的是这样的 20 张表</h3>
+          <ul class="pain-list">
+            <li><b>表头不在首行</b>——前面先写两行标题，数据从第三行才开始</li>
+            <li><b>字段名各写各的</b>——「金额」「金 额」「销售金额」混着来，还带空格</li>
+            <li><b>空行与合计行</b>——表格中间夹空行，末尾一行「合计」混进数据</li>
+            <li><b>重复订单</b>——同一笔订单在表里出现两次，汇总就会多算</li>
           </ul>
-          <p class="price">简单处理 5~15 元 · 多表处理 15~30 元 · 定制脚本 30 元起</p>
-        </article>
-        <article class="card">
-          <h3>静态网页制作</h3>
-          <ul>
-            <li>个人主页、作品集、简历页</li>
-            <li>小店 / 工作室展示页</li>
-            <li>纯前端实现，打开快、好维护</li>
-            <li>可绑定你自己的域名</li>
-          </ul>
-          <p class="price">单页 50 元起 · 按需求报价，先出效果图确认</p>
-        </article>
+          <p class="pain-note">靠手工一张张改，一个通宵也未必对得上账。这类活的正确解法是写脚本：规则定一次，跑多少张表都是同一套标准。</p>
+
+          <h3><span class="pf">ii.</span> 三步处理流</h3>
+          <ol class="mini-steps">
+            <li><b>清洗</b>——定位真表头、统一字段名、剔除空行与合计行</li>
+            <li><b>合并</b>——按（门店，订单号）去重，20 张表纵向合并</li>
+            <li><b>交付</b>——总汇总表 + 按区域拆分 5 份，排版美化到能直接汇报</li>
+          </ol>
+        </div>
+
+        <!-- 右栏：处理前 / 后切换对比 -->
+        <div class="case-visual">
+          <div class="toggle" role="tablist" aria-label="处理前后切换">
+            <button class="toggle-btn is-active" data-view="before" role="tab" type="button" aria-selected="true">处理前 · 原始乱表</button>
+            <button class="toggle-btn" data-view="after" role="tab" type="button" aria-selected="false">处理后 · 精排交付</button>
+          </div>
+
+          <!-- 处理前：仿真乱表卡 -->
+          <div class="sheet-card sheet-before is-active" data-sheet="before">
+            <div class="sheet-bar"><span>上海一店_5月销售(上报版).xlsx</span><span class="sheet-badge badge-bad">未处理 · 4处异常</span></div>
+            <div class="table-scroll">
+              <table class="fake-table messy">
+                <tr><td colspan="4" class="t-title">五月份销售情况汇总（第一版）</td></tr>
+                <tr><td colspan="4" class="t-blank">&nbsp;</td></tr>
+                <tr class="t-head"><td>订单号 </td><td>金<mark class="err-mark" title="含多余空格">␣</mark>额</td><td>门 店</td><td>日期</td></tr>
+                <tr><td>SH1042</td><td>1,299</td><td>上海一店</td><td>5/3</td></tr>
+                <tr><td>SH1043</td><td>86.5</td><td>上海一店</td><td>2026-05-03</td></tr>
+                <tr><td colspan="4" class="t-blank">（空行夹杂）</td></tr>
+                <tr class="t-dup"><td>SH1042 <span class="err-tag">重复</span></td><td>1,299</td><td>上海一店</td><td>5/3</td></tr>
+                <tr class="t-total"><td>合计（混入数据区）</td><td>2,684.5</td><td></td><td></td></tr>
+              </table>
+            </div>
+            <p class="sheet-note">↑ 标题占首行、字段夹空格、日期格式混用、订单 SH1042 重复计入总额。</p>
+          </div>
+
+          <!-- 处理后：仿真精排汇总表卡 -->
+          <div class="sheet-card sheet-after" data-sheet="after">
+            <div class="sheet-bar"><span>2026-05_全国门店销售总表_已核对.xlsx</span><span class="sheet-badge badge-good">100% 对账一致</span></div>
+            <div class="table-scroll">
+              <table class="fake-table clean">
+                <tr class="t-head"><td>标准单号</td><td class="num">核算金额 (RMB)</td><td>归属门店</td><td class="mono">交易日期</td></tr>
+                <tr><td class="mono">SH-1042</td><td class="num">1,299.00</td><td>上海一店</td><td class="mono">2026-05-03</td></tr>
+                <tr><td class="mono">SH-1043</td><td class="num">86.50</td><td>上海一店</td><td class="mono">2026-05-03</td></tr>
+                <tr><td class="mono">SH-1044</td><td class="num">2,450.00</td><td>上海二店</td><td class="mono">2026-05-04</td></tr>
+                <tr><td class="mono">BJ-2210</td><td class="num">699.00</td><td>北京一店</td><td class="mono">2026-05-04</td></tr>
+                <tr class="t-total"><td>总计（清洗后 473 条）</td><td class="num">¥ 163,139.00</td><td colspan="2" class="num-note">误差 0.00 · 已去重 3 条</td></tr>
+              </table>
+            </div>
+            <div class="sheet-tabs" aria-label="生成的工作表标签">
+              <span class="s-tab is-on">★ 总汇总表 (473)</span>
+              <span class="s-tab">华东区 (142)</span>
+              <span class="s-tab">华北区 (118)</span>
+              <span class="s-tab">华南区 (96)</span>
+              <span class="s-tab">+ 其余 2 区</span>
+            </div>
+            <p class="sheet-note">↑ 金额千分位右对齐、日期归一、首行冻结，底部自动拆好 5 个大区分表。</p>
+          </div>
+
+          <!-- 终端日志 -->
+          <div class="terminal" aria-label="处理日志演示">
+            <div class="term-bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="term-title">clean_sales.py — 自动化批处理日志</span>
+              <button class="term-replay" id="termReplay" type="button">↻ 重播</button>
+            </div>
+            <pre class="term-body" id="termBody"></pre>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="case" class="sec alt">
-    <div class="wrap">
-      <h2>案例：20 张门店烂表 → 一张汇总表</h2>
-      <p class="lead">20 个门店的月销售表：表头位置不一、字段名带空格、混着空行和合计行、还有重复订单。清洗合并后：473 条订单，总额 163,139.00 元，对账分毫不差。</p>
-      <div class="mock">
-        <p class="mock-cap bad">处理前 · 每张表都长得不一样</p>
-        <table class="t messy">
-          <tr><td colspan="4" class="t-title">城南店6月销售（第二版）</td></tr>
-          <tr><th>订 单 号</th><th>商 品</th><th>数 量</th><th>金 额</th></tr>
-          <tr><td>CS-0601</td><td>矿泉水</td><td>20</td><td>30.00</td></tr>
-          <tr class="dup"><td>CS-0601</td><td>矿泉水</td><td>20</td><td>30.00</td></tr>
-          <tr><td colspan="4" class="blank">&nbsp;</td></tr>
-          <tr><td colspan="3">合计</td><td>……</td></tr>
-        </table>
-        <p class="mock-note">表头不在第一行 · 字段名带空格 · 混着空行和合计行 · 还有重复订单</p>
-        <p class="mock-cap good">处理后 · 一张汇总表</p>
-        <table class="t clean">
-          <tr><th>订单号</th><th>门店</th><th>区域</th><th>金额</th></tr>
-          <tr><td>CS-0601</td><td>城南店</td><td>华南</td><td>30.00</td></tr>
-          <tr><td>HB-0237</td><td>江北店</td><td>华北</td><td>1,280.50</td></tr>
-          <tr><td>HD-0412</td><td>浦东店</td><td>华东</td><td>866.00</td></tr>
-          <tr class="total"><td colspan="3">共 473 条订单 · 合计</td><td>¥163,139.00</td></tr>
-        </table>
-        <p class="mock-note">去重、统一格式、剔除合计行，对账分毫不差；另按区域拆成 5 个分表交付</p>
+  <!-- ══════════ SERVICES · INDEX MENU ══════════ -->
+  <section id="services" class="services wrap">
+    <header class="sec-head">
+      <p class="case-tag"><span class="pf">Index — Services</span></p>
+      <h2>服务目录</h2>
+    </header>
+    <div class="index-menu">
+      <a class="index-row" href="https://www.goofish.com/item?id=1100967305771" target="_blank" rel="noopener">
+        <span class="pf index-num">01</span>
+        <span class="index-main"><b>Excel 数据处理</b><small>多表合并汇总 · 清洗拆分 · 公式函数 · PDF 转表 · 批量报表</small></span>
+        <span class="index-price">¥5 起</span>
+      </a>
+      <a class="index-row" href="#contact">
+        <span class="pf index-num">02</span>
+        <span class="index-main"><b>静态网页制作</b><small>个人主页 · 作品集 · 简历页 · 小店展示页 — 就像你正在看的这一页</small></span>
+        <span class="index-price">¥50 起</span>
+      </a>
+      <div class="index-row is-soon">
+        <span class="pf index-num">03</span>
+        <span class="index-main"><b>Dify / ComfyUI 部署</b><small>干净安装 · 基础配置 · 包教包会答疑</small></span>
+        <span class="index-price">筹备中</span>
       </div>
     </div>
+    <p class="index-note">价格都是起步价：先看你的文件和需求，再给准确报价与工期——不看文件不开价，是这里的规矩。</p>
   </section>
 
-  <section id="flow" class="sec">
+  <!-- ══════════ FLOW ══════════ -->
+  <section id="flow" class="flow">
     <div class="wrap">
-      <h2>怎么合作</h2>
-      <ol class="steps">
-        <li><b>发文件</b><span>把表格和想处理的效果发我，先看文件</span></li>
-        <li><b>报价</b><span>看完给准确价格和工期，不合适不收费</span></li>
-        <li><b>交付</b><span>按约定时间交付结果文件</span></li>
-        <li><b>验收</b><span>你核对无误再确认，不满意免费改</span></li>
+      <header class="sec-head">
+        <p class="case-tag"><span class="pf">Index — Process</span></p>
+        <h2>合作流程</h2>
+      </header>
+      <ol class="flow-steps">
+        <li><span class="pf">1</span><b>发文件</b><p>把表格和想要的效果发我，先看文件。</p></li>
+        <li><span class="pf">2</span><b>报价</b><p>看完给准确价格和工期，不合适不收费。</p></li>
+        <li><span class="pf">3</span><b>交付</b><p>按约定时间交付，进度随时可问。</p></li>
+        <li><span class="pf">4</span><b>验收</b><p>你核对无误再确认，不满意免费改。</p></li>
       </ol>
     </div>
   </section>
 
-  <section id="contact" class="sec alt">
-    <div class="wrap center">
-      <h2>联系我</h2>
-      <p class="lead">目前通过闲鱼咨询和下单，平台担保，彼此都放心。</p>
-      <a class="btn" href="https://www.goofish.com/item?id=1100967305771" target="_blank" rel="noopener">闲鱼商品页 →</a>
-      <p class="fine">新店期间：前 3 单限时优惠价</p>
-    </div>
+  <!-- ══════════ CONTACT ══════════ -->
+  <section id="contact" class="contact wrap">
+    <p class="case-tag"><span class="pf">Contact</span></p>
+    <h2>有表要理，或者想要一页自己的主页？</h2>
+    <p class="contact-sub">目前统一通过闲鱼咨询下单，平台担保，彼此放心。新店期间，前 3 单限时优惠价。</p>
+    <a class="btn" href="https://www.goofish.com/item?id=1100967305771" target="_blank" rel="noopener">闲鱼商品页 →</a>
   </section>
 </main>
 
 <footer>
   <div class="wrap foot-in">
     <span>© 2026 041030.top</span>
-    <span>Excel 数据处理 · 静态网页制作</span>
+    <span class="pf foot-note">Set in Noto Serif SC &amp; Playfair Display</span>
   </div>
 </footer>
 <script src="script.js"></script>
